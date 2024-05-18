@@ -33,15 +33,15 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         listView = (ListView) findViewById(R.id.listview);
         TextView textView = (TextView) findViewById(R.id.secondtext);
-        textView.setOnClickListener(v -> {
-                    RobustModify.modify();
-                    Toast.makeText(SecondActivity.this, "fix", Toast.LENGTH_LONG).show();
-                }
-        );
 //        textView.setOnClickListener(v -> {
-//                    Toast.makeText(SecondActivity.this, "occur", Toast.LENGTH_LONG).show();
+//                    RobustModify.modify();
+//                    Toast.makeText(SecondActivity.this, "fix", Toast.LENGTH_LONG).show();
 //                }
 //        );
+        textView.setOnClickListener(v -> {
+                    Toast.makeText(SecondActivity.this, "occur", Toast.LENGTH_LONG).show();
+                }
+        );
         //change text on the  SecondActivity
         textView.setText(getTextInfo());
 
@@ -51,17 +51,17 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         printLog("robust", new String[][]{new String[]{"1", "2", "3"}, new String[]{"4", "5", "6"}});
     }
 
-    @Modify
-    public String getTextInfo() {
-        getArray();
-//        return "error occur " ;
-        return "error fixed";
-    }
-
+//    @Modify
 //    public String getTextInfo() {
 //        getArray();
-//        return "error occur ";
+////        return "error occur " ;
+//        return "error fixed";
 //    }
+
+    public String getTextInfo() {
+        getArray();
+        return "error occur ";
+    }
 
     public String[] getArray() {
         return new String[]{"hello", "world"};

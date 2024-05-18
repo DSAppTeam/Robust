@@ -20,13 +20,13 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main2)
         listView = findViewById<View>(R.id.listview) as ListView
         val textView = findViewById<View>(R.id.secondtext) as TextView
-        textView.setOnClickListener { v: View? ->
-                    RobustModify.modify();
-            Toast.makeText(this@KotlinActivity, "fix", Toast.LENGTH_LONG).show()
-        }
 //        textView.setOnClickListener { v: View? ->
-//            Toast.makeText(this@KotlinActivity, "occur", Toast.LENGTH_LONG).show()
+//                    RobustModify.modify();
+//            Toast.makeText(this@KotlinActivity, "fix", Toast.LENGTH_LONG).show()
 //        }
+        textView.setOnClickListener { v: View? ->
+            Toast.makeText(this@KotlinActivity, "occur", Toast.LENGTH_LONG).show()
+        }
         //change text on the  SecondActivity
         textView.text = getTextInfo()
 
@@ -36,22 +36,22 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
         printLog("robust", arrayOf(arrayOf("1", "2", "3"), arrayOf("4", "5", "6")))
     }//
 
-    @Modify
-    private fun getTextInfo(): String {
-        array
-        return "error fixed";
-    }
-
-    @Add
-    class Test() {
-        fun onClick(v: View) {
-
-        }
-    }
+//    @Modify
 //    private fun getTextInfo(): String {
 //        array
-//        return "error occur";
+//        return "error fixed";
 //    }
+//
+//    @Add
+//    class Test() {
+//        fun onClick(v: View) {
+//
+//        }
+//    }
+    private fun getTextInfo(): String {
+        array
+        return "error occur";
+    }
 
     val array: Array<String>
         get() = arrayOf("hello", "world")
